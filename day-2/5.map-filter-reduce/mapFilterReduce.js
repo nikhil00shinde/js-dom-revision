@@ -22,9 +22,36 @@ let a = ["this ", "is ", "a ", "string"];
 // console.log(a);
 // console.log(returnedArr);
 
-function add(x, y) {
-	return x + y;
-}
+// function add(x, y) {
+// 	return x + y;
+// }
 
-let returnedVal = a.reduce(add);
-console.log(returnedVal);
+// let returnedVal = a.reduce(add);
+// console.log(returnedVal);
+
+// REDUCE
+
+let users = [
+	{ name: "John", age: 34 },
+	{ name: "Amy", age: 20 },
+	{ name: "camperCat", age: 10 },
+];
+
+const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
+console.log(sumOfAges);
+
+// .reduce(function (previousValue, currentValue) {
+// 	return previousValue + currentValue.x;
+// }, initialValue);
+
+ users = [
+	{ name: "John", age: 34 },
+	{ name: "Amy", age: 20 },
+	{ name: "camperCat", age: 10 },
+];
+
+const usersObj = users.reduce((obj, user) => {
+	obj[user.name] = user.age;
+	return obj;
+}, {});
+console.log(usersObj);
