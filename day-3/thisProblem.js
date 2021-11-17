@@ -4,12 +4,24 @@ let obj = {
 	name: "Rahul",
 
 	f: function () {
-		//the first solution ye hain ki convert kardo g function ko arrow function mei, kyuki arrow function ka khudka this nhi hota hain ,voh lexical context se udhta hain matlab voh apne parent se udhta hain
-		let g = () => {
+		function g(x, y, z) {
 			//using this keyword I want to access properties of obj inside g
+			console.log(x + y + z);
 			console.log(this);
-		};
-		g();
+		}
+
+		//call method it calls the function jispr apne use kra h  ise and aap is arguments me this ka ref dete ho
+		//and wohi ref g ka bhi this ban jata
+		// g.call(this, 1, 2, 3);
+
+		//apply function works exactly the same with a subtle diff
+		// let arr = [1, 2, 3];
+		// g.apply(this, arr);
+
+		//bind return karta new function jiska this jo pass kiya hain voh hoga
+		let newG = g.bind(this);
+
+		newG(1, 2, 3);
 	},
 };
 
