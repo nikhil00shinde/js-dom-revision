@@ -6,9 +6,9 @@
 
 //AFTER RESOLVE    
 //state: "fulfilled"
-//reject: value
+//result: value
 
 
 //AFTER REJECT
 //state: "rejected"
-//reject: err
+//result: err

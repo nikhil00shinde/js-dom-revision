@@ -10,6 +10,15 @@ let p3 = Promise.all([p1, p2]);
 //when the returned promise from promise.all resolves
 //it contains an array with values of the promises passed to promise.all
 
+// p3.then(function (valArr) {
+// 	return valArr[0].json();
+// }).then(function (json) {
+// 	console.log(json);
+// });
+
 p3.then(function (valArr) {
-	console.log(valArr);
+	return Promise.all([valArr[0].json(), valArr[1].json()]);
+}).then(function (json) {
+	console.log(json[0]);
+	console.log(json[1]);
 });
