@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		.container {
+			height: 10rem;
+			width: 10rem;
+			background: red;
+		}
+		.c1 {
+			height: 5rem;
+			width: 5rem;
+			background: yellow;
+		}
+	</style>
+	<body>
+		<div class="container">
+			<div class="c1">
+				<button>Click me</button>
+			</div>
+		</div>
+		<script>
+			let container = document.querySelector(".container");
+			let button = document.querySelector("button");
+			let c1 = document.querySelector(".c1");
+			container.addEventListener("click", function (e) {
+				console.log(e.target); //the element on which event occured
+				console.log(e.currentTarget); // the element on which event handler was attached
+			});
+
+			c1.addEventListener("click", function (e) {
+				console.log(e.target);
+				console.log(e.currentTarget);
+				console.log("----------------------");
+			});
+		</script>
+	</body>
+</html>
+
+
+<!-- Eske ek concept hain EVENT DELEGATION ==> event js pr occur hooya,woh us event ke liye, event handler nhi chala raha hain voh event kisi aur ko dede raha hain & woh dusra bandha event handler chala raha hain  -->
