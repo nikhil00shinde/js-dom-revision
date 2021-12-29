@@ -39,6 +39,8 @@
 			subParent.addEventListener("click", function (e) {
 				e.stopPropagation();
 				console.log("sub");
+				// to stop bubbling
+				e.stopPropagation();
 			});
 
 			superParent.addEventListener("click", function () {
