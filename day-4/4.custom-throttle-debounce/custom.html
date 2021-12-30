@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.a1 {
+				height: 10rem;
+				width: 10rem;
+				background: red;
+			}
+			.a2 {
+				height: 5rem;
+				width: 5rem;
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a1">
+			<div class="a2"></div>
+		</div>
+		<button>click</button>
+
+		<script>
+			// let p = document.querySelector("p");
+			// let btn = document.querySelector("button");
+
+			// btn.addEventListener("click", function () {
+			// 	// To assign event
+			// 	let customEvent = new Event("myEvent");
+			// 	// To trigger the Event
+			// 	p.dispatchEvent(customEvent);
+			// });
+
+			// // To trigger the event Listener
+			// p.addEventListener("myEvent", function (e) {
+			// 	e.currentTarget.style.color = red;
+			// });
+            
+			// -----------------------------------------------------------------------------//
+			//BUBBLING in CUSTOM EVENTS
+			let a1 = document.querySelector(".a1");
+			let a2 = document.querySelector(".a2");
+
+			let btn = document.querySelector("button");
+
+			a1.addEventListener("myEvent", function (e) {
+				e.currentTarget.style.background = "yellow";
+			});
+			a2.addEventListener("myEvent", function (e) {
+				e.currentTarget.style.background = "red";
+			});
+
+			btn.addEventListener("click", function (e) {
+				let customEvent = new Event("myEvent", { bubbles: "true" });
+				a2.dispatchEvent(customEvent);
+			});
+		</script>
+	</body>
+</html>
+
+<!-- In custom event, we create our own event -->
+<!-- aapko element chahiye hoga jiske upar voh event occur hoga -->
