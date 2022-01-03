@@ -1,0 +1,47 @@
+<!-- Css is language is used to style up html page -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			/* type/element selector */
+			p {
+				color: red;
+			}
+
+			/* class based selector */
+			.upper {
+				color: blue;
+			}
+
+			/* id based selector */
+			#unique {
+				color: orange;
+			}
+
+			/* attribute selector */
+			[data-id="2"] {
+				color: green;
+			}
+
+			/* universal selector */
+			* {
+				/* sabpr ye property laga do */
+        color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p class="upper">Paragraph 1</p>
+			<p class="upper" id="unique">Paragraph 2</p>
+			<p>Paragraph 3</p>
+			<p data-id="2">Paragraph 4</p>
+		</div>
+	</body>
+</html>
