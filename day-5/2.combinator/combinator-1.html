@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			/* (" ") empty space ALL CHILDREN */
+			/* div ke sare children(direct as well as indirect ) joki p tag hai and unhe bold krdo */
+			div p {
+				font-weight: bold;
+			}
+
+			/* (>) DIRECT CHILDREN */
+			/* div ke direct children joki p tag hai use blue kardo */
+
+			div > p {
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>make me bold and blue</p>
+			<span>
+				<p>make me bold</p>
+			</span>
+		</div>
+	</body>
+</html>
