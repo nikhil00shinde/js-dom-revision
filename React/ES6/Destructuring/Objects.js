@@ -25,7 +25,13 @@ let person = {
 // console.log(car);
 ////////////////////////////////Alias
 
-let { name, country: b, job: c } = person;
+// let { name, country: b, job: c } = person;
+// console.log(name);
+// console.log(b);
+// console.log(c);
+
+////////////using reamining key
+
+let { name, ...rest } = person;
 console.log(name);
-console.log(b);
-console.log(c);
+console.log(rest);
